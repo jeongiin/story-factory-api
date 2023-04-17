@@ -7,9 +7,5 @@ def ko_to_en(text : str):
     return translator.translate(text)
 
 
-def ko_preprocessing(content_array, n):
-    result_array = []
-    for content in content_array:
-        result_array.append(content.replace(str(n)+'. ',""))
-    return result_array
-
+def ko_preprocessing(content, n):
+    return content.replace(str(n)+'. ',"")

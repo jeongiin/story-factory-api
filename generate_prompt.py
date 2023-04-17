@@ -1,10 +1,11 @@
 import openai
 import conti_maker
+
 # -*- coding: utf-8 -*-
 
 def generate_prompt(query, n):
     
-    return query + "\n === \n" + "위 내용을 문장 "+str(n)+"개로 넘버링해서 묘사해줘." 
+    return query + "\n === \n" + "위 내용을 20글자 이내 문장 "+str(n)+"개로 넘버링해서 묘사해줘." 
 
 
 def content_to_array(content):

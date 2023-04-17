@@ -4,9 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import JSONResponse
 from conti_maker import *
 
-# 
 
-origins = ["*"]
 
 origins = [
     "http://localhost:8000"
@@ -16,7 +14,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -25,9 +23,8 @@ app.add_middleware(
 
 @app.post("/txt2img")
 async def make_conti_txt2img(txt2img: Txt2Conti):
-    global conti
-    conti = generate_conti(txt2img)
-
-    converted_conti = jsonable_encoder(conti)
+    global g_conti
+    g_conti = generate_conti(txt2img)
+    converted_conti = jsonable_encoder(g_conti)
     return JSONResponse(content=converted_conti)
 

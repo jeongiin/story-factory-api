@@ -4,7 +4,6 @@ import io
 import base64
 from PIL import Image
 
-
 def img2bytes(img):
     img_byte_arr = io.BytesIO()
     img.save(img_byte_arr, format='PNG')
@@ -24,6 +23,6 @@ def generate_img(prompt, txt2img):
     # Results match those from the CPU device after the warmup pass.
     image = pipe(prompt=prompt, height=txt2img.height, width=txt2img.width,
                  num_inference_steps=txt2img.num_inference_steps, 
-                num_images_per_prompt=txt2img.number_of_imgs).images   
+                num_images_per_prompt=txt2img.num_reference).images   
 
     return image
