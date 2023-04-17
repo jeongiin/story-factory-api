@@ -10,6 +10,11 @@ def img2bytes(img):
     encoded_img = base64.encodebytes(img_byte_arr.getvalue()).decode('ascii')
     return encoded_img
 
+def bytes2img(base64_string, mode='RGBA'):
+    imgdata = base64.b64decode(str(base64_string))
+    img = Image.open(io.BytesIO(imgdata)).convert(mode)
+    return img
+
 def generate_img(prompt, txt2img):
     pipe = DiffusionPipeline.from_pretrained(txt2img.model_diff)
     pipe = pipe.to("mps") # m1 pro gpu option

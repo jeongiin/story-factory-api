@@ -7,7 +7,7 @@ from conti_maker import *
 
 
 origins = [
-    "http://localhost:8000"
+    "http://0.0.0.0:80"
 ]
 
 app = FastAPI()
