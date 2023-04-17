@@ -1,0 +1,38 @@
+import openai
+from generate_prompt import *
+from generate_reference import *
+from preprcess import *
+import matplotlib.pyplot as plt
+from pydantic import BaseModel
+from typing import Optional
+
+class Txt2Conti(BaseModel):
+    # Conti = story + reference
+    story: Optional[str] 
+    num_content: Optional[int] = 3
+    num_reference: Optional[int] = 1
+    model_gpt: Optional[str] = "gpt-3.5-turbo"
+    model_diff: Optional[str] = "runwayml/stable-diffusion-v1-5"
+    height: Optional[int] = 512
+    width: Optional[int] = 512
+    num_inference_steps: Optional[int] = 30
+    conti : Optional[dict] = {}
+
+
+def generate_conti(txt2conti : Txt2Conti):
+
+    prompt = generate_prompt(txt2conti.contents,txt2conti.num_content) # prompt engineering
+    story_str = generate_content(prompt, txt2conti.model_gpt) # return 한국어로 요약된 문장 # 반드시 한글이 들어온다는 전제이므로 추후 개발이 필요할 듯
+    contents_ko = content_to_array(story_str) # return 요약된 한 문장을 \n 기준 분리한 배열
+    contents_en = ko_preprocessing(contents_ko, txt2conti.num_content) # return 효과적인 이미지 생성을 위한 영어 번역
+
+    txt2conti.conti = {content : [] for content in contents_en}
+
+    for i, content in enumerate(contents_en):
+        prompt_diffusion = ko_to_en(content)
+        print("\n", prompt_diffusion, "\n") # for check
+        refers = generate_img(prompt_diffusion, txt2conti)
+        refers_bytes = img2bytes(refers)
+        txt2conti.conti[contents_ko[i]].append(refers) # 이미지 배열에 담아서 반환
+    
+    return refers
