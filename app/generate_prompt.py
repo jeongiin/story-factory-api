@@ -1,5 +1,4 @@
 import openai
-import conti_maker
 
 # -*- coding: utf-8 -*-
 

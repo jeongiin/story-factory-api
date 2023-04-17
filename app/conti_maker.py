@@ -1,7 +1,7 @@
 import openai
-from generate_prompt import *
-from generate_reference import *
-from preprcess import *
+from .generate_prompt import *
+from .generate_reference import *
+from .preprcess import *
 import matplotlib.pyplot as plt
 from pydantic import BaseModel
 from typing import Optional
