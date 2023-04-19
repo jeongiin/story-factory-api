@@ -27,7 +27,6 @@ app.add_middleware(
 @app.post("/txt2img")
 async def make_conti_txt2img(txt2img: Txt2Conti):
     global g_conti
-    print(txt2img)
     g_conti = generate_conti(txt2img)
     converted_conti = jsonable_encoder(g_conti)
     return JSONResponse(content=converted_conti)
