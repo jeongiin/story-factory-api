@@ -18,7 +18,8 @@ def bytes2img(base64_string, mode='RGBA'):
 
 def generate_img(prompt, txt2img):
     pipe = DiffusionPipeline.from_pretrained(txt2img.model_diff)
-    gpu_opt = "cuda" if torch.cuda.is_available() else "mps"
+    gpu_opt = "cuda"
+    # if torch.cuda.is_available() else "mps"
     pipe = pipe.to(gpu_opt) # m1 pro gpu option
 
     # Recommended if your computer has < 64 GB of RAM

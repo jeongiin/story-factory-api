@@ -1,9 +1,11 @@
 from .generate_prompt import *
 from .generate_reference import *
-from preprcess import *
+from .preprcess import *
+
 import matplotlib.pyplot as plt
 from pydantic import BaseModel
 from typing import Optional
+import torch
 
 class Txt2Conti(BaseModel):
     # Conti = story + reference
