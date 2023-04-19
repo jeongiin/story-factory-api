@@ -2,7 +2,10 @@ from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import JSONResponse
-from conti_maker import *
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+from app.conti_maker import *
 
 
 
