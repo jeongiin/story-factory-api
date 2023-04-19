@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import JSONResponse
-from .conti_maker import *
+from conti_maker import *
 
 
 

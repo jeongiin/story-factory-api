@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import io
 import base64
 from PIL import Image
+import torch
 
 def img2bytes(img):
     img_byte_arr = io.BytesIO()
@@ -17,7 +18,8 @@ def bytes2img(base64_string, mode='RGBA'):
 
 def generate_img(prompt, txt2img):
     pipe = DiffusionPipeline.from_pretrained(txt2img.model_diff)
-    pipe = pipe.to("mps") # m1 pro gpu option
+    gpu_opt = "cuda" if torch.cuda.is_available() else "mps"
+    pipe = pipe.to(gpu_opt) # m1 pro gpu option
 
     # Recommended if your computer has < 64 GB of RAM
     pipe.enable_attention_slicing()

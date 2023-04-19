@@ -15,7 +15,7 @@ def content_to_array(content):
 def generate_content(prompt, model_gpt="gpt-3.5-turbo"):
 
     # 발급받은 API 키 설정
-    OPENAI_API_KEY = open("/Users/timdalxx/PROJECT/story-factory-api/token.txt", 'r').readline()
+    OPENAI_API_KEY = open("./token.txt", 'r').readline()
     # openai API 키 인증
     openai.api_key = OPENAI_API_KEY
 
