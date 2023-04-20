@@ -10,7 +10,8 @@ from app.conti_maker import *
 
 
 origins = [
-    "http://0.0.0.0:80"
+    "http://0.0.0.0:80",
+    "localhost:3000"
 ]
 
 app = FastAPI()

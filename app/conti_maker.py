@@ -9,7 +9,7 @@ import torch
 
 class Txt2Conti(BaseModel):
     # Conti = story + reference
-    contents: Optional[str] 
+    contents: Optional[str]
     num_content: Optional[int] = 6 # 몇 문장 요약?
     num_reference: Optional[int] = 1 # 각 몇 장의 이미지 생성?
     style: Optional[str] = "sketch style"
