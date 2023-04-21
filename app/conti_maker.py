@@ -1,20 +1,22 @@
 from .generate_prompt import *
 from .generate_reference import *
-from preprcess import *
+from .preprcess import *
+
 import matplotlib.pyplot as plt
 from pydantic import BaseModel
 from typing import Optional
+import torch
 
 class Txt2Conti(BaseModel):
     # Conti = story + reference
-    contents: Optional[str] 
+    contents: Optional[str]
     num_content: Optional[int] = 6 # 몇 문장 요약?
     num_reference: Optional[int] = 1 # 각 몇 장의 이미지 생성?
     style: Optional[str] = "sketch style"
     model_gpt: Optional[str] = "gpt-3.5-turbo"
     model_diff: Optional[str] = "runwayml/stable-diffusion-v1-5"
-    height: Optional[int] = 610
-    width: Optional[int] = 414
+    height: Optional[int] = 608 # 8의 배수
+    width: Optional[int] = 416 # 8의 배수
     num_inference_steps: Optional[int] = 30 # 한 장당 30steps에 2~30초 소요됨
     conti : Optional[dict] = {}
 

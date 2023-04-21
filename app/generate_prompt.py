@@ -1,5 +1,5 @@
 import openai
-
+import os
 # -*- coding: utf-8 -*-
 
 def generate_prompt(query, n):
@@ -15,7 +15,8 @@ def content_to_array(content):
 def generate_content(prompt, model_gpt="gpt-3.5-turbo"):
 
     # 발급받은 API 키 설정
-    OPENAI_API_KEY = open("./token.txt", 'r').readline()
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    OPENAI_API_KEY = open(os.path.join(BASE_DIR, "token.txt"), 'r').readline()
     # openai API 키 인증
     openai.api_key = OPENAI_API_KEY
 
