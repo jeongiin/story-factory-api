@@ -11,7 +11,9 @@ from app.conti_maker import *
 
 origins = [
     "http://0.0.0.0:80",
-    "localhost:3000"
+    "http://localhost",
+    "http://localhost:3000",
+    "https://story-factory-frontend.vercel.app/"
 ]
 
 app = FastAPI()
