@@ -13,7 +13,7 @@ class Txt2Conti(BaseModel):
     num_content: Optional[int] = 6 # 몇 문장 요약?
     num_reference: Optional[int] = 1 # 각 몇 장의 이미지 생성?
     style: Optional[str] = "fantasy art, landscape art, illustration, fantasy, artstation, smooth, sharp focus, ray tracing"
-    modgel_gpt: Optional[str] = "gpt-3.5-turbo"
+    model_gpt: Optional[str] = "gpt-3.5-turbo"
     model_diff: Optional[str] = "runwayml/stable-diffusion-v1-5"
     height: Optional[int] = 608 # 8의 배수
     width: Optional[int] = 416 # 8의 배수
