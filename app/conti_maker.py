@@ -12,8 +12,8 @@ class Txt2Conti(BaseModel):
     contents: Optional[str]
     num_content: Optional[int] = 6 # 몇 문장 요약?
     num_reference: Optional[int] = 1 # 각 몇 장의 이미지 생성?
-    style: Optional[str] = "sketch style"
-    model_gpt: Optional[str] = "gpt-3.5-turbo"
+    style: Optional[str] = "fantasy art, landscape art, illustration, fantasy, artstation, smooth, sharp focus, ray tracing"
+    modgel_gpt: Optional[str] = "gpt-3.5-turbo"
     model_diff: Optional[str] = "runwayml/stable-diffusion-v1-5"
     height: Optional[int] = 608 # 8의 배수
     width: Optional[int] = 416 # 8의 배수
@@ -33,7 +33,7 @@ def generate_conti(txt2conti : Txt2Conti) -> Txt2Conti:
 
     for i, content in enumerate(contents_ko_with_num):
         contents_ko = ko_preprocessing(content, i+1) # return 효과적인 이미지 생성을 위한 영어 번역
-        prompt_diffusion = txt2conti.style + ", " + ko_to_en(contents_ko)
+        prompt_diffusion = ko_to_en(contents_ko) + ", " + txt2conti.style
         print("\n", prompt_diffusion, "\n") # for check
         refers = generate_img(prompt_diffusion, txt2conti)
         for refer in refers:
