@@ -66,7 +66,8 @@ Story Factory는 글 쓰는 능력은 있지만 요약하고 그림을 그려줄
 
 
 # 6. 서비스 시연 영상 & 링크
-![image](https://user-images.githubusercontent.com/48753785/233927268-21d3e7e7-4a0a-41c4-b536-1d86e9c26aaf.png)
+
+![시연영상_컷_AdobeExpress (1)](https://user-images.githubusercontent.com/48753785/233927570-7f671b24-b3a2-474e-99bc-c96a4f84e420.gif)
 
 Demo : https://story-factory-frontend.vercel.app/
 
