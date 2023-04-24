@@ -65,7 +65,8 @@ Story Factory는 글 쓰는 능력은 있지만 요약하고 그림을 그려줄
 
 
 
-# 6. 서비스 링크
+# 6. 서비스 시연 영상 & 링크
+![image](https://user-images.githubusercontent.com/48753785/233927268-21d3e7e7-4a0a-41c4-b536-1d86e9c26aaf.png)
 
 Demo : https://story-factory-frontend.vercel.app/
 
@@ -74,5 +75,5 @@ Demo : https://story-factory-frontend.vercel.app/
 
 
 # Team
-- Front-end : [@myunbongs](https://github.com/myunbongs/story-factory-frontend)
-- Back-end & AI : [@timdalxx]()
+- Front-End : [@myunbongs](https://github.com/myunbongs/story-factory-frontend)
+- Back-End & AI : [@timdalxx](https://github.com/jeongiin/story-factory-api)
