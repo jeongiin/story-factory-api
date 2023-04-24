@@ -73,3 +73,6 @@ Demo : https://story-factory-frontend.vercel.app/
 ![image](https://user-images.githubusercontent.com/48753785/233917667-03fc5fda-cb02-413b-8832-0621b878d040.png)
 
 
+# Team
+- Front-end : [@myunbongs](https://github.com/myunbongs/story-factory-frontend)
+- Back-end & AI : [@timdalxx]()
